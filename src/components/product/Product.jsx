@@ -7,11 +7,15 @@ const Product = ({ img, title, description }) => {
 
   function wishlistAdded() {
     setActive(!active);
-    toast(`${title} has been added to your wishlist.`);
+    toast(`${title} has been added to your wishlist.`, {
+      icon: "❤️",
+    });
   }
   function wishlistRemoved() {
-    setActive(active);
-    toast(`${title} has been removed from your wishlist.`);
+    setActive(!active);
+    toast(`${title} has been removed from your wishlist.`, {
+      icon: "🖤",
+    });
   }
 
   return (

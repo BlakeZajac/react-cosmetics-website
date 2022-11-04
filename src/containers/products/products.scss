@@ -4,6 +4,10 @@
   &__content {
     padding-bottom: 4rem;
 
+    @media all and (max-width: $breakpoint-tablet-sm) {
+      padding-bottom: 3rem;
+    }
+
     h2 {
       padding-bottom: 2rem;
       max-width: 500px;
@@ -15,16 +19,37 @@
   }
 
   &__items {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto;
     gap: 2rem;
     justify-content: space-between;
 
+    @media all and (max-width: $breakpoint-tablet-sm) {
+      gap: 1rem;
+      grid-template-columns: auto auto;
+    }
+
+    @media all and (max-width: $breakpoint-mobile) {
+      gap: 2rem;
+      grid-template-columns: auto;
+    }
+
     &__item {
-      width: 50%;
+      cursor: pointer;
+      border: 1px solid #dadada;
+      border-radius: 10px;
+      overflow: hidden;
+
+      &:hover {
+        background: linear-gradient(rgb(0 0 0 / 5%) 0 0);
+
+        h2 {
+          opacity: 0.5;
+          transition: all 0.1s ease-in-out;
+        }
+      }
 
       &__image {
-        padding-bottom: 1rem;
-
         img {
           height: 100%;
           width: 100%;
@@ -35,31 +60,69 @@
       &__wrapper {
         display: flex;
         justify-content: space-between;
+        padding: 1.5rem;
+
+        @media all and (max-width: $breakpoint-tablet-sm) {
+          padding: 1rem;
+        }
 
         &__content {
           h2 {
             font-size: 1.25rem;
             font-weight: 600;
             padding-bottom: 0.25rem;
+            transition: all 0.1s ease-in-out;
+
+            @media all and (max-width: $breakpoint-tablet-sm) {
+              font-size: 1.125rem;
+            }
           }
 
           h4 {
             font-size: 1.25rem;
             font-weight: 400;
             color: $color-grey;
+
+            @media all and (max-width: $breakpoint-tablet-sm) {
+              font-size: 1rem;
+            }
           }
         }
 
         &__wishlist {
+          cursor: pointer;
+
           svg.wishlist-default {
             fill: $color-grey;
           }
 
           svg.wishlist-clicked {
-            fill: red;
+            fill: rgb(204, 49, 61);
+            animation: pulse-red 1s ease-in-out;
           }
         }
       }
     }
+  }
+
+  &__button {
+    padding-top: 2rem;
+  }
+}
+
+@keyframes pulse-red {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(204, 49, 61, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(204, 49, 61, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(204, 49, 61, 0);
   }
 }

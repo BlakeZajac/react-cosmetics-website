@@ -8,10 +8,10 @@ function App() {
       <Navbar />
       <Hero />
       <Products />
-      {/* <Benefits />
+      <Benefits />
       <Reviews />
       <Map />
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }
