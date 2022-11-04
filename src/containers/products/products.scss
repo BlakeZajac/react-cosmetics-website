@@ -1,0 +1,65 @@
+@import "../../index.scss";
+
+.products {
+  &__content {
+    padding-bottom: 4rem;
+
+    h2 {
+      padding-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    p {
+      max-width: 335px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+
+    &__item {
+      width: 50%;
+
+      &__image {
+        padding-bottom: 1rem;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+
+      &__wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        &__content {
+          h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            padding-bottom: 0.25rem;
+          }
+
+          h4 {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: $color-grey;
+          }
+        }
+
+        &__wishlist {
+          svg.wishlist-default {
+            fill: $color-grey;
+          }
+
+          svg.wishlist-clicked {
+            fill: red;
+          }
+        }
+      }
+    }
+  }
+}

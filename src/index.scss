@@ -5,6 +5,73 @@ $color-orange: #f05b32;
 $color-cream: #ebd5c8;
 $color-pale-cream: #fff3ed;
 
+// Breakpoints map
+$breakpoint-mobile: 479px;
+$breakpoint-mobile-up: 480px;
+$breakpoint-tablet-sm: 767px;
+$breakpoint-tablet-sm-up: 768px;
+$breakpoint-tablet: 980px;
+$breakpoint-desktop: 981px;
+
+// Fonts
+@font-face {
+  font-family: "Uncut-Sans";
+  src: url("./fonts/Uncut-Sans-Variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+$font-family: "Uncut-Sans";
+
+body {
+  font-family: $font-family;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: $color-black;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: $color-black;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: $color-black;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: $color-black;
+}
+
+p,
+ol,
+ul {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  color: $color-grey;
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+
 * {
   margin: 0;
   padding: 0;
@@ -12,13 +79,26 @@ $color-pale-cream: #fff3ed;
 }
 
 a {
+  color: initial;
   text-decoration: none;
 }
 
-@font-face {
-  font-family: "Uncut-Sans";
-  src: url("./fonts/Uncut-Sans-Variable.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
+.section {
+  width: 100%;
+  padding: 3rem 0;
+
+  @media all and (max-width: $breakpoint-tablet-sm) {
+    padding: 1.5rem 0;
+  }
+}
+
+.row {
+  padding: 1rem 0;
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.color-orange {
+  color: $color-orange;
 }

@@ -1,0 +1,66 @@
+@import "../../index.scss";
+
+.button {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button.button {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      font-size: 1.25rem;
+      font-weight: 400;
+
+      @media all and (max-width: $breakpoint-tablet-sm) {
+        font-size: 1rem;
+      }
+
+      &:hover {
+        &::before {
+          border: 1px solid #666;
+          transition: all 0.2s ease-in-out;
+        }
+
+        .button__text {
+          color: #666;
+          transition: all 0.2s ease-in-out;
+        }
+      }
+
+      &::before {
+        content: url("../../assets/icon-arrow-right.png");
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        border: 1px solid $color-black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease-in-out;
+
+        @media all and (max-width: $breakpoint-tablet-sm) {
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+  }
+
+  &--black {
+    .button__text {
+      background-color: #fff;
+    }
+  }
+
+  &__text {
+    padding: 4px;
+    background-color: $color-cream;
+    margin-left: -10px;
+    transition: all 0.2s ease-in-out;
+  }
+}
