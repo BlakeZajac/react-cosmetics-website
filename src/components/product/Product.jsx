@@ -5,14 +5,13 @@ import toast, { Toaster } from "react-hot-toast";
 const Product = ({ img, title, description }) => {
   const [active, setActive] = useState(false);
 
-  const handleClick = () => {
+  function wishlistAdded() {
     setActive(!active);
-  };
-
-  const wishlistAdded = () =>
     toast(`${title} has been added to your wishlist.`);
-  const wishlistRemoved = () =>
+  }
+  function wishlistRemoved() {
     toast(`${title} has been removed from your wishlist.`);
+  }
 
   return (
     <div className="products__items__item">
@@ -28,7 +27,11 @@ const Product = ({ img, title, description }) => {
 
         <div className="products__items__item__wrapper__wishlist">
           <AiFillHeart
-            onClick={wishlistAdded}
+            onClick={() => {
+              {
+                active ? wishlistRemoved() : wishlistAdded();
+              }
+            }}
             className={active ? "wishlist-clicked" : "wishlist-default"}
             size={20}
           />
