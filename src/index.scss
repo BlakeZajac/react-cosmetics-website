@@ -104,12 +104,17 @@ a {
 }
 
 a.text-link {
+  transition: all 0.2s ease-in-out;
+
   svg {
     margin-left: 1rem;
     transition: all 0.2s ease-in-out;
   }
 
   &:hover {
+    opacity: 0.5;
+    transition: all 0.2s ease-in-out;
+
     svg {
       margin-left: 2rem;
       transition: all 0.2s ease-in-out;
