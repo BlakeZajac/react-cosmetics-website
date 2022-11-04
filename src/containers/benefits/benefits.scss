@@ -30,6 +30,7 @@
       &:nth-of-type(even) {
         @media all and (min-width: $breakpoint-desktop) {
           flex-direction: column-reverse;
+          margin-top: 90px;
 
           .benefits__items__item__content {
             margin-top: 80px;

@@ -1,0 +1,105 @@
+@import "../../index.scss";
+
+.reviews {
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    background: $color-cream;
+    z-index: -1;
+
+    @media all and (max-width: $breakpoint-tablet) {
+      height: 500px;
+    }
+
+    @media all and (max-width: $breakpoint-mobile) {
+      height: 700px;
+    }
+  }
+
+  &__content {
+    padding: 2rem 0 3rem;
+  }
+
+  &__items {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+
+    @media all and (max-width: $breakpoint-tablet) {
+      flex-direction: column;
+    }
+
+    &__item {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 20px;
+      position: relative;
+      top: 0;
+      transition: all 0.2s ease-in-out;
+
+      @media all and (max-width: $breakpoint-tablet-sm) {
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+
+      @media all and (max-width: $breakpoint-mobile) {
+        flex-direction: column;
+      }
+
+      &:hover {
+        top: -5px;
+        transition: all 0.2s ease-in-out;
+
+        img {
+          filter: grayscale(0);
+          transition: all 1s ease-in-out;
+        }
+      }
+
+      &__image {
+        img {
+          height: 150px;
+          border-radius: 10px;
+          filter: grayscale(1);
+          transition: all 1s ease-in-out;
+
+          @media all and (max-width: $breakpoint-tablet-sm) {
+            height: 128px;
+          }
+        }
+      }
+
+      &__content {
+        p {
+          letter-spacing: 0;
+        }
+
+        p.review {
+          padding-bottom: 2rem;
+
+          &::before {
+            content: '"';
+            position: absolute;
+            font-size: 10rem;
+            color: $color-cream;
+            margin-top: -80px;
+            margin-left: -20px;
+            opacity: 0.5;
+          }
+        }
+
+        p.author {
+          color: $color-black;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

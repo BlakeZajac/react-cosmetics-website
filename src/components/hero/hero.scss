@@ -3,6 +3,16 @@
 .hero {
   background: $color-cream;
 
+  @media all and (max-width: $breakpoint-tablet-sm) {
+    height: calc(
+      100vh - 104px - 80px
+    ); // 100% - header height - extra space for device url bar
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   &__row {
     display: flex;
     align-items: center;
@@ -68,5 +78,9 @@
 
   &__button {
     width: 100%;
+
+    @media all and (max-width: $breakpoint-tablet-sm) {
+      padding-bottom: 3rem;
+    }
   }
 }

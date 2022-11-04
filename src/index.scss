@@ -102,3 +102,17 @@ a {
 .color-orange {
   color: $color-orange;
 }
+
+a.text-link {
+  svg {
+    margin-left: 1rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    svg {
+      margin-left: 2rem;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}

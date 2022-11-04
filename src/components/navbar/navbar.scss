@@ -3,6 +3,9 @@
 .navbar {
   padding: 1rem 0 !important;
   background-color: $color-cream;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 
   &__items {
     display: flex;
